@@ -1,0 +1,16 @@
+<div *ngIf="selectedContact">
+  <div class="page-header">
+  <h2>Selected Contact</h2>
+</div>
+  <hr />
+  <label for="firstName">firstName: </label> {{ selectedContact.firstName
+  }}<br />
+  <label for="lastname">Lastname: </label> {{ selectedContact.lastname }}<br />
+  <label for="phoneNumber">Home Phone: </label> {{ selectedContact.phoneNumber
+  }}<br />
+  <label for="workphone">Work Phone: </label> {{ selectedContact.workphone
+  }}<br />
+  <label for="address">Address: </label> {{ selectedContact.address }}<br />
+  <label for="company">Company: </label> {{ selectedContact.company }}<br />
+  <label for="email">Email: </label> {{ selectedContact.email }}
+</div>

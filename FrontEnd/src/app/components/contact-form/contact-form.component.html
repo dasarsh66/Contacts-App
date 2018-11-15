@@ -1,0 +1,201 @@
+<form
+  *ngIf="!contact"
+  form
+  #f="ngForm"
+  (ngSubmit)="submit(f.value); f.resetForm()"
+>
+  <div class="form-group">
+    <label for="firstName">firstName</label>
+    <input
+      ngModel
+      name="firstName"
+      #firstName="ngModel"
+      type="text"
+      id="firstName"
+      class="form-control"
+    />
+    <!--
+      <div *ngIf="firstName.touched && firstName.invalid" class="alert alert-danger">firstName is Required</div>
+    -->
+  </div>
+  <div class="form-group">
+    <label for="lastname">Lastname</label>
+    <input
+      ngModel
+      name="lastname"
+      #lastname="ngModel"
+      type="text"
+      id="lastname"
+      class="form-control"
+    />
+    <!--
+      <div *ngIf="lastname.touched && lastname.invalid" class="alert alert-danger">Lastname is Required</div>
+    -->
+  </div>
+
+  <div class="form-group">
+    <label for="phoneNumber">Home phone</label>
+    <input
+      ngModel
+      name="phoneNumber"
+      #phoneNumber="ngModel"
+      type="text"
+      id="phoneNumber"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="workphone">Work phone</label>
+    <input
+      ngModel
+      name="workphone"
+      #workphone="ngModel"
+      type="text"
+      id="workphone"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="address">Address</label>
+    <input
+      ngModel
+      name="address"
+      #address="ngModel"
+      type="text"
+      id="address"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="company">Company</label>
+    <input
+      ngModel
+      name="company"
+      #company="ngModel"
+      type="text"
+      id="company"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      ngModel
+      name="email"
+      #email="ngModel"
+      type="text"
+      id="email"
+      class="form-control"
+    />
+  </div>
+
+  <p>{{ f.value | json }}</p>
+  <button class="btn btn-primary" [disabled]="f.invalid">Create</button>
+</form>
+
+<form *ngIf="contact" #f="ngForm" (ngSubmit)="edit(f.value); f.resetForm()">
+  <div class="form-group">
+    <label for="firstName">firstName</label>
+    <input
+      [(ngModel)]="contact.firstName"
+      ngModel
+      name="firstName"
+      #firstName="ngModel"
+      type="text"
+      id="firstName"
+      class="form-control"
+    />
+
+    <!--
+      <div *ngIf="firstName.touched && firstName.invalid" class="alert alert-danger">firstName is Required</div>
+    -->
+  </div>
+  <div class="form-group">
+    <label for="lastname">Lastname</label>
+    <input
+      [(ngModel)]="contact.lastname"
+      ngModel
+      name="lastname"
+      #lastname="ngModel"
+      type="text"
+      id="lastname"
+      class="form-control"
+    />
+    <!--
+      <div *ngIf="lastname.touched && lastname.invalid" class="alert alert-danger">Lastname is Required</div>
+    -->
+  </div>
+
+  <div [hidden]="true" class="form-group">
+    <label for="phoneNumber">Home phone</label>
+    <input
+      [(ngModel)]="contact.phoneNumber"
+      ngModel
+      name="phoneNumber"
+      #phoneNumber="ngModel"
+      type="text"
+      id="phoneNumber"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="workphone">Work phone</label>
+    <input
+      [(ngModel)]="contact.workphone"
+      ngModel
+      name="workphone"
+      #workphone="ngModel"
+      type="text"
+      id="workphone"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="address">Address</label>
+    <input
+      [(ngModel)]="contact.address"
+      ngModel
+      name="address"
+      #address="ngModel"
+      type="text"
+      id="address"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="company">Company</label>
+    <input
+      [(ngModel)]="contact.company"
+      ngModel
+      name="company"
+      #company="ngModel"
+      type="text"
+      id="company"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      [(ngModel)]="contact.email"
+      ngModel
+      name="email"
+      #email="ngModel"
+      type="text"
+      id="email"
+      class="form-control"
+    />
+  </div>
+
+  <p>{{ f.value | json }}</p>
+  <button class="btn btn-primary mr-3" (click)="edit(contact)">Save</button>
+  <button class="btn btn-info" (click)="createNewContact()">New Contact</button>
+</form>

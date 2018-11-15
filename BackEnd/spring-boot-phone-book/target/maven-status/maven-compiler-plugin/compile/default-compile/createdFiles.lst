@@ -1,0 +1,5 @@
+com\st\springboot\example\control\PhoneBookControl.class
+com\st\springboot\example\entity\PhoneBook.class
+com\st\springboot\example\service\PhoneBookService.class
+com\st\springboot\example\Application.class
+com\st\springboot\example\Repository\PhoneBookRepository.class

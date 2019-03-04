@@ -27,6 +27,13 @@ public class PhoneBookControl {
 		return service.retrieveDetails();
 	}
 	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping("/api/phonebook"){
+		//console.log("Printing")
+		System.out.println("Printing here");
+		return service.retrieveDetails();
+	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/api/phonebook/{phoneNumber}")
 	public PhoneBook getDetails(@PathVariable(name = "phoneNumber") String phoneNumber) {
 		return service.getDetails(phoneNumber);

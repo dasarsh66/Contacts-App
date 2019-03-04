@@ -28,6 +28,8 @@ public class PhoneBookControl {
 	}
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/api/phonebook"){
+		//console.log("Printing")
+		System.out.println("Printing here");
 		return service.retrieveDetails();
 	}
 
